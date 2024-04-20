@@ -1,4 +1,4 @@
-# Import library
+# Load library
 library(ggplot2)
 
 # Load the data
@@ -14,7 +14,8 @@ color_palette = c("#1F77B4", "#FF7F0E", "#2CA02C", "#D62728", "#9467BD",
 # Create the plot
 cluster = ggplot(clustered, aes(x = long, y = lat, color = cluster)) + 
   geom_point() +
-  scale_color_manual(values = color_palette) +  # Set the color manually
+  # Set the color manually
+  scale_color_manual(values = color_palette) +
   coord_map() + 
   # Add plot title
   labs(title = "House clusters",
