@@ -2,7 +2,7 @@
 library(dplyr)
 library(tidyverse)
 
-# Import dataset from the raw data folder
+# Import data set from the raw data folder
 data = read.csv("data/raw/kc_house_data.csv", header = TRUE)
 
 ################################################################################
