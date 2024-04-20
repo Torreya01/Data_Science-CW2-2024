@@ -52,3 +52,4 @@ ggsave(filename = "Histogram.png",
        width = 8,   # Width of the plot in inches
        height = 6,  # Height of the plot in inches
        dpi = 300)
+
