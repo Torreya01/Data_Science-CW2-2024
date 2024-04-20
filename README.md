@@ -4,19 +4,29 @@ The project is designed to use RShiny to develop an interactive platform that vi
 
 # Explaining Directories
 
-### Data/
+### data/
 
-This directory contains all the raw and derived datasets.
+This directory contains all the raw and derived data.
 
--   The raw data for the sales com from the official public records of the house sales in King County area, USA. The data set contains 21613 rows, each represents a house sale from May 2014 through May 2015. The relevant data is available through [here](https://www.kaggle.com/harlfoxem/housesalesprediction).
+-   Raw data: This folder contains data for the sales, which comes from the official public records of the house sales in King County area, USA. The data contains 21613 rows, each represents a house sale from May 2014 through May 2015. The relevant data is available through [here](https://www.kaggle.com/harlfoxem/housesalesprediction).
 
--   The derived data are all processed from the raw data by running the R script in data-cleaning.
+-   Derived data: This folder contains all derived data processed from the raw data by running files in source/.
 
-### Source/
+### source/
 
--   The folder data-cleaning involves R files which clean and derive the data.
+-   The data-cleaning is R file that cleans and derives the data.
+-   The data-reducing is R file that reduces the data.
+-   The data-clustering is R file that adds cluster column to the data.
+
+### plots/
+
+This directory contains all the plots inserted in the application and codes.
+
+-   Codes:
 
 ### Application/
+
+This is the application script.
 
 # How to run the application
 
