@@ -1,4 +1,4 @@
-# Import library
+# Load library
 library(ggplot2)
 
 # Load the reduced data
