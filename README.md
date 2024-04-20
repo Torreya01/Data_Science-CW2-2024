@@ -40,7 +40,7 @@ This directory contains all the plots inserted in the application and codes.
 
     -   The box-plot figure is the box plot of the prices for each clusters.
 
-### Application/
+### app/
 
 This is the application script.
 
