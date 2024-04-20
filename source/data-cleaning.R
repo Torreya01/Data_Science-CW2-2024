@@ -5,8 +5,6 @@ library(tidyverse)
 # Import data set from the raw data folder
 data = read.csv("data/raw/kc_house_data.csv", header = TRUE)
 
-################################################################################
-
 # The codes below are used for extracting data for RShiny app
 
 ## Extract data that only contains the house prices and location information
