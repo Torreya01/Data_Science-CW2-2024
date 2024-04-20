@@ -30,13 +30,15 @@ This directory contains all the plots inserted in the application and codes.
 
     -   The cluster file contains the codes that produce the clustered figure.
 
-    -   
+    -   The box-plot file contains the codes that produce the box plot.
 
 -   figures:
 
     -   The histogram figure is the histogram of the house prices.
 
     -   The cluster figure is the map that divided the houses into 10 clusters.
+
+    -   The box-plot figure is the box plot of the prices for each clusters.
 
 ### Application/
 
