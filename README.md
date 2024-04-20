@@ -58,8 +58,7 @@ runGitHub("02439389-math70076-assessment-2", "Torreya01", launch.browser = TRUE)
 In case R package shiny is not installed please run the following command.
 
 ``` r
-install.packages("shiny", repos="http://cran.us.r-project.org")
-library(shiny)
+install.packages("shiny", repos = "http://cran.us.r-project.org")
 ```
 
 ### If you do not have R installed
