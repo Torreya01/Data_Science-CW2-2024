@@ -32,6 +32,10 @@ This directory contains all the plots inserted in the application and codes.
 
     -   The box-plot file contains the codes that produce the box plot.
 
+-   figures-from-internet:
+
+    -   The street-view figure is the street view of the most expensive house.
+
 -   figures:
 
     -   The histogram figure is the histogram of the house prices.
