@@ -16,7 +16,7 @@ line_data = data.frame(x = c(max_density_x, max_density_x),
 # Create histogram with ggplot
 hist = ggplot(reduced, aes(x = price)) +
   # Normalise the histogram
-  geom_histogram(aes(y = ..density..),
+  geom_histogram(aes(y = after_stat(density)),
                  # Adjust binwidth to the scale of the data
                  binwidth = 50000,
                  color = "black", fill = "lightblue", alpha = 0.7) +
@@ -48,7 +48,7 @@ hist = ggplot(reduced, aes(x = price)) +
 ggsave(filename = "Histogram.png",
        plot = hist,
        device = 'png', 
-       path = "Plots/Figures",
+       path = "www/figures",
        width = 8,   # Width of the plot in inches
        height = 6,  # Height of the plot in inches
        dpi = 300)
