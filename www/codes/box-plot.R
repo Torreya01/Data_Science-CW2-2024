@@ -17,7 +17,7 @@ box = ggplot(data, aes(x = factor(cluster), y = price)) +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 
 # Save the plot
-ggsave(filename = "Box-plot.png",
+ggsave(filename = "Box-Plot.png",
        plot = box,
        device = 'png', 
        path = "www/figures",
