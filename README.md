@@ -20,7 +20,7 @@ This directory contains all the raw and derived data.
 -   The data-reducing is R file that reduces the data.
 -   The data-clustering is R file that adds cluster column to the data.
 
-### plots/
+### www/
 
 This directory contains all the plots inserted in the application and codes.
 
