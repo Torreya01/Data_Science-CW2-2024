@@ -16,6 +16,7 @@ cluster = ggplot(clustered, aes(x = long, y = lat, color = cluster)) +
   geom_point() +
   # Set the color manually
   scale_color_manual(values = color_palette) +
+  # Add the map
   coord_map() + 
   # Add plot title
   labs(title = "House clusters",
