@@ -5,7 +5,7 @@ library(ggplot2)
 data = read.csv("data/derived/location_clustered.csv")
 
 # Create the boxplot using ggplot
-ggplot(data, aes(x = factor(cluster), y = price)) + 
+box = ggplot(data, aes(x = factor(cluster), y = price)) + 
   # Add box plot
   geom_boxplot() +
   # Add plot title
@@ -14,13 +14,13 @@ ggplot(data, aes(x = factor(cluster), y = price)) +
        x = "Clusters",
        # Label for y-axis
        y = "Prices") +  
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))  # If cluster names are long
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5))
 
 # Save the plot
 ggsave(filename = "Box-plot.png",
        plot = box,
        device = 'png', 
-       path = "Plots/Figures",
+       path = "www/figures",
        width = 8,   # Width of the plot in inches
        height = 6,  # Height of the plot in inches
        dpi = 300)
