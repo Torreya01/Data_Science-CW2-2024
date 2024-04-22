@@ -34,7 +34,7 @@ This directory contains all the plots inserted in the application and codes.
 
 -   figures-from-internet:
 
-    -   The street-view figure is the street view of the most expensive house.
+    -   The street-view figure is the street view of the most expensive house downloaded from [here](https://www.google.com/maps/@47.6299522,-122.3223733,3a,75y,114.42h,91.38t/data=!3m6!1e1!3m4!1sr65xGU9EfLv60UohDKQapQ!2e0!7i16384!8i8192?entry=ttu).
 
 -   figures:
 
