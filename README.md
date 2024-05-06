@@ -32,13 +32,6 @@ This directory contains all the plots inserted in the application and codes.
 
     -   The box-plot file contains the codes that produce the box plot.
 
--   figures-from-internet:
-
-    -   The street-view-1.png is the street view of the most expensive house can be found [here](https://www.google.com/maps/@47.6299522,-122.3223733,3a,75y,114.42h,91.38t/data=!3m6!1e1!3m4!1sr65xGU9EfLv60UohDKQapQ!2e0!7i16384!8i8192?entry=ttu) from Google map.
-    -   The street-view-2.png is the street view of the second expensive house can be found [here](https://www.google.co.uk/maps/@47.6496913,-122.2151528,3a,75y,235.11h,82.3t/data=!3m6!1e1!3m4!1sDaM6ZBHsQBcyPBi4FcmUiA!2e0!7i16384!8i8192?entry=ttu) from Google map.
-    -   The street-view-3.png is the street view of the third expensive house can be found [here](https://www.google.co.uk/maps/@47.6303864,-122.2391435,3a,75y,27.68h,85.56t/data=!3m6!1e1!3m4!1sU9CcXgQ3bbZ2FQUR6PNv8A!2e0!7i16384!8i8192?entry=ttu) from Google map.
-    -   The water-view.png
-
 -   figures:
 
     -   The histogram.png is the histogram of the house prices.
@@ -46,6 +39,15 @@ This directory contains all the plots inserted in the application and codes.
     -   The cluster.png is the map that divided the houses into 10 clusters.
 
     -   The box-plot.png is the box plot of the prices for each clusters.
+
+-   figures-from-internet:
+
+    -   The street-view-1.png is the street view of the most expensive house in cluster 9 can be found [here](https://www.google.com/maps/@47.6299522,-122.3223733,3a,75y,114.42h,91.38t/data=!3m6!1e1!3m4!1sr65xGU9EfLv60UohDKQapQ!2e0!7i16384!8i8192?entry=ttu) from Google map.
+    -   The street-view-2.png is the street view of the most expensive house in cluster 7 can be found [here](https://www.google.co.uk/maps/@47.6496913,-122.2151528,3a,75y,235.11h,82.3t/data=!3m6!1e1!3m4!1sDaM6ZBHsQBcyPBi4FcmUiA!2e0!7i16384!8i8192?entry=ttu) from Google map.
+    -   The street-view-3.png is the street view of the most expensive house in cluster 3 can be found [here](https://www.google.co.uk/maps/@47.5629133,-122.2114549,3a,75y,53.06h,84.79t/data=!3m6!1e1!3m4!1sF5FrTXI2ygTIXr7n8yyIcQ!2e0!7i16384!8i8192?entry=ttu) from Google map.
+    -   The water-view-1.png is the view of Lake union can be found [here](https://www.google.co.uk/maps/place/Lake+Union/@47.6396286,-122.3332684,5a,73.9y/data=!3m8!1e2!3m6!1sAF1QipPVH1BumadJeva00xEQ_WZAXwJhtZd1GPTxbPXZ!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipPVH1BumadJeva00xEQ_WZAXwJhtZd1GPTxbPXZ%3Dw203-h152-k-no!7i4032!8i3024!4m7!3m6!1s0x5490150855d85f3f:0xeb5feb67cd0a7b6d!8m2!3d47.6396286!4d-122.3332684!10e5!16zL20vMDFnOGh0?entry=ttu) from Google map.
+    -   The water-view-2.png is the view of Lake Washington can be found [here](https://www.google.co.uk/maps/place/Lake+Washington/@47.6215474,-122.255756,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOBU9Umz-0jlGkh2PpNPL2Ob1hewCQe4TEpUKek!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOBU9Umz-0jlGkh2PpNPL2Ob1hewCQe4TEpUKek%3Dw203-h135-k-no!7i1620!8i1080!4m9!3m8!1s0x549014cd737a0137:0x9069059ce509d017!8m2!3d47.6215474!4d-122.255756!10e5!14m1!1BCgIgAQ!16zL20vMDFnM3Zu?entry=ttu) from Google map.
+    -   The water-view-3.png is the view of Lake Washington can be found [here](The street-view-3.png is the street view of the third expensive house can be found here from Google map.) from Google map.
 
 ### app/
 
@@ -59,7 +61,7 @@ Open your R console or RStudio and paste the commands provided below.
 
 ``` r
 library(shiny)
-runGitHub("02439389-math70076-assessment-2", "Torreya01", launch.browser = TRUE)
+runGitHub("Data_Science-2024", "Torreya01", launch.browser = TRUE)
 ```
 
 In case R package shiny is not installed please run the following command.
@@ -70,7 +72,7 @@ install.packages("shiny", repos = "http://cran.us.r-project.org")
 
 ### If you do not have R installed
 
-You can access to the application via this website.
+You can access to the application via the website here.
 
 ## Instructions for reproducing
 
