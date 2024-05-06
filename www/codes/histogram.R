@@ -21,7 +21,7 @@ hist = ggplot(reduced, aes(x = price)) +
                  binwidth = 50000,
                  color = "black", fill = "lightblue", alpha = 0.7) +
   # Add density plot
-  geom_density(aes(y = ..density..),  
+  geom_density(aes(y = after_stat(density)),  
                # Adjust the color of the density curve
                color = "red", 
                # Adjust the size of the density curve
