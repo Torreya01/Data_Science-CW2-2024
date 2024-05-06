@@ -1,7 +1,7 @@
 library(ggplot2)
 
 # Load the data
-data_reduced <- read.csv("data/derived/location_reduced.csv")
+data_reduced <- read.csv("data/derived/location.csv")
 
 # Determine the number of clusters
 fviz_nbclust(data_reduced[,c("lat","long")], kmeans, method = "wss")
