@@ -10,9 +10,9 @@ The project is designed to use RShiny to develop an interactive platform that vi
 
 This directory contains all the raw and derived data.
 
--   raw data: This folder contains data for the sales, which comes from the official public records of the house sales in King County area, USA. The data contains 21613 rows, each represents a house sale from May 2014 through May 2015. The relevant data is available through [here](https://www.kaggle.com/harlfoxem/housesalesprediction).
+-   raw: This folder contains data for the sales, which comes from the official public records of the house sales in King County area, USA. The data contains 21613 rows, each represents a house sale from May 2014 through May 2015. The relevant data is available through [here](https://www.kaggle.com/harlfoxem/housesalesprediction).
 
--   derived data: This folder contains all derived data processed from the raw data by running files in source/.
+-   derived: This folder contains all derived data processed from the raw data by running files in source/.
 
 ### source/
 
@@ -51,7 +51,7 @@ This directory contains all the plots inserted in the application and codes.
 
 ### app/
 
-This is the application script with comment
+This is the application script with comment.
 
 ## How to run the application
 
@@ -61,7 +61,7 @@ Open your R console or RStudio and paste the commands provided below.
 
 ``` r
 library(shiny)
-runGitHub("Data_Science-2024", "Torreya01", launch.browser = TRUE)
+runGitHub("Data_Science-CW2-2024", "Torreya01", launch.browser = TRUE)
 ```
 
 In case R package shiny is not installed please run the following command.
@@ -76,7 +76,19 @@ You can access to the application via the website here.
 
 ## Instructions for reproducing
 
-1.  
+1.  Obtain data from above link. (you may find it [here](https://www.kaggle.com/harlfoxem/housesalesprediction) again)
+
+2.  Run files in source/ in following order to obtain the derived data.
+
+    -   data-cleaning.R
+
+    -   data-clustering.R
+
+    -   data-reducing.R
+
+3.  Run the three R files in www/codes/ to obtain the figures.
+
+4.  Run the application using the instruction above.
 
 ## Getting help
 
