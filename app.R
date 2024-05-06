@@ -4,23 +4,28 @@ library(shiny)
 library(leaflet)
 library(dplyr)
 library(DT)
+library(bslib)
+library(ggplot2)
 
 # Define UI
-ui <- navbarPage("House Prices in King County",
-                 tabPanel("Map",
+ui = navbarPage("House Prices in King County",
+                theme = bs_theme(version = 5, bootswatch = "minty"),
+                tabPanel("Map",
                           sidebarLayout(
                             sidebarPanel(
                               sliderInput("priceRange",
                                           "Price Range:",
-                                          min = 0,  # Initial minimum value
-                                          max = 1,  # Initial maximum value
-                                          value = c(0, 1),  # Initial range from min to max
-                                          step = 50000,  # Steps in the slider (increments of $50,000)
-                                          pre = "$"  # Prefix for values shown in the slider
-                              ),
-                              checkboxGroupInput("selectedClusters",
-                                                 "Select Clusters:",
-                                                 choices = NULL
+                                          min = 0,
+                                          max = 1,
+                                          value = c(0, 1),
+                                          step = 50000,
+                                          pre = "$"),
+                              div(style = "display: 2:5; flex-wrap: wrap;",
+                                  checkboxGroupInput("selectedClusters",
+                                                     "Select Clusters:",
+                                                     choices = as.character(1:10),
+                                                     selected = 1:10,
+                                                     inline = TRUE)
                               )
                             ),
                             mainPanel(
@@ -60,15 +65,40 @@ ui <- navbarPage("House Prices in King County",
                               instead of the full data set."),
                             )
                           )),
-                 tabPanel("Density Discussion",
-                          p("Below is the histogram of the reduced data with a density curve."),
                           
-                          # Add the histogram image here
+                 tabPanel("Statistical Analysis",
+                          p("Below are some non-parametric statistical analysis about the 
+                            house data. We will first look at how 10 different clusters are 
+                            located in the map, and then discuss the density of the whole
+                            data set. Finally, we will look at a box plot for each clusters 
+                            so that we can find out which region has the most expensive houses
+                            and look for the reasons."),
+                          
+                          h3("10 different house clusters"),
+                          
                           div(style = "text-align: center;",  # Center the image and caption
-                              img(src = "figures/Histogram.png", height = "600px", width = "800px"),
-                              p("Histogram of the house prices with density in King County, USA")
-                          ),
+                              img(src = "figures/Cluster.png", height = "600px", width = "800px"),
+                              p("10 different clusters shown on the King County map")),
                           
+                          p("The plot is a scatterplot visualizing house data from King County, 
+                          categorized into 10 different clusters via k-means. Each cluster 
+                          is represented by a unique color. K-means is a popular clustering algorithm 
+                          used in data analysis and machine learning to partition a set of observations 
+                          into a specified number of clusters, where each observation belongs 
+                          to the cluster with the nearest mean."),
+    
+                          p("Some clusters like 1, 2, 3 and 4 are more densely packed, while others 
+                          are more spread out, which reflects the population density 
+                          or the type of housing available in those areas are not that many. Especially for 
+                          cluster ."),
+                          
+                          h3("Density plot of the reduced data with a density curve"),
+                         
+                          div(style = "text-align: center;",  # Center the image and caption
+                             img(src = "figures/Histogram.png", height = "600px", width = "800px"),
+                             p("Histogram of the house prices with density in King County, USA")
+                          ),
+                         
                           p("The x-axis represents the price of houses in King County, 
                           the y-axis represents the density of the distribution, showing
                           how the data is distributed along different price points.
@@ -79,27 +109,29 @@ ui <- navbarPage("House Prices in King County",
                           p("There is a density curve, which helps visualize the distribution's 
                           shape and spread. The peak corresponds to the mode of the distribution.
                           In this plot, the mode of the distribution is around 415944.24, 
-                          where most prices distributed.")),
+                          where most prices distributed."),
                           
-                 tabPanel("House Clusters",
-                          div(style = "text-align: center;",  # Center the image and caption
-                              img(src = "figures/Cluster.png", height = "600px", width = "800px"),
-                              p("10 different clusters shown on the King County map")),
+                          fluidRow(
+                            column(6,  # First column for dynamic density plots
+                                   h4("Density Plot for Specific Cluster"),
+                                   selectInput("clusterSelection1", "Choose a Cluster:",
+                                               choices = c("All Clusters", as.character(1:10))),
+                                   plotOutput("densityPlot1", width = "100%", height = "400px")),
+                            column(6,  # Second column for static image
+                                   h4("Full Data Density Plot"),
+                                   selectInput("clusterSelection2", "Choose a Cluster:",
+                                               choices = c("All Clusters", as.character(1:10))),
+                                   plotOutput("densityPlot2", width = "100%", height = "400px"))
+                          ),
                           
-                          p("The plot is a scatterplot visualizing house data from King County, 
-                          categorized into 10 different clusters via k-means. Each cluster 
-                          is represented by a unique color."),
-    
-                          p("Some clusters like 1, 2, 3 and 4 are more densely packed, while others 
-                          are more spread out, which might reflect the population density 
-                          or the type of housing available in those areas.")),
+                          p("Here you can compare the densities between "),
                           
-                 tabPanel("Box-plot Analysis",
-                          # Add the box plot image here
+                          h3("The boxplot for 10 different clusters"),
+                          
                           div(style = "text-align: center;",  # Center the image and caption
                               img(src = "figures/Box.png", height = "600px", width = "800px"),
                               p("Box plot of the clusters showing differnt variability")
-                          ),
+                           ),
                           
                           p("Through the box plot of the data, I can visualize the distribution
                           of house prices across 10 different clusters."),
@@ -133,7 +165,9 @@ ui <- navbarPage("House Prices in King County",
                           ),
                           
                           p("Based on these street views, we can say they all have great sunshine,
-                          nice streets and ")),
+                          nice streets and "),
+                          
+                          p("The ")),
                  tabPanel("Transportation",
                           h3("Nearby Transportations"),
                           p("Details about the transportation..."))
@@ -144,7 +178,7 @@ ui <- navbarPage("House Prices in King County",
 server = function(input, output, session) {
   
   # Read data from a CSV file
-  house = read.csv("data/derived/location_clustered.csv", stringsAsFactors = FALSE)
+  house = read.csv("data/derived/location_reduced.csv", stringsAsFactors = FALSE)
   
   # Observe changes in data and update the slider accordingly
   observe({
@@ -157,11 +191,9 @@ server = function(input, output, session) {
                              choices = levels(factor(house$cluster)),
                              selected = levels(factor(house$cluster)))
   })
-  
-  # Define a reactive expression to filter data based on the slider input
 
   # Update reactive expression for filtered data
-  filteredData <- reactive({
+  filteredData = reactive({
     house %>%
       filter(price >= input$priceRange[1], price <= input$priceRange[2]) %>%
       filter(as.character(cluster) %in% input$selectedClusters)  # Filter for selected clusters
@@ -190,6 +222,91 @@ server = function(input, output, session) {
     }
     
     map  # Return the map object
+  })
+  
+  output$densityPlot1 = renderPlot({
+    
+    # Filter data based on the selected cluster
+    data = house
+    if (input$clusterSelection1 != "All Clusters") {
+      data = data[data$cluster == as.numeric(input$clusterSelection1), ]
+    }
+    
+    # Calculate the density
+    density_data = density(data$price, adjust = 4)
+    max_density_x = density_data$x[which.max(density_data$y)]
+    max_density_y = max(density_data$y)
+    # Create a data frame for the vertical line
+    line_data = data.frame(x = c(max_density_x, max_density_x), 
+                           y = c(0, max_density_y))
+    
+    # Generate the density plot
+    ggplot(data, aes(x = price)) +
+      # Normalise the histogram
+      geom_histogram(aes(y = after_stat(density)),
+                     # Adjust binwidth to the scale of the data
+                     binwidth = 50000,
+                     color = "black", fill = "lightblue", alpha = 0.7) +
+      geom_density(aes(y = ..density..),  
+               # Adjust the color of the density curve
+               color = "red", 
+               # Adjust the size of the density curve
+               linewidth = 1,
+               # Adjust the smoothing parameter for density
+               adjust = 4) + 
+      labs(title = paste("Density Plot for Cluster", input$clusterSelection),
+           x = "Price",
+           y = "Density") +
+      xlim(0, 8000000) +
+      # Add vertical line at max density
+      geom_segment(aes(x = x, y = 0, xend = x, yend = y), 
+                   data = line_data,
+                   color = "blue", size = 1, linetype = "dashed") +
+      # Add label max density
+      geom_text(aes(x = max_density_x, y = 0, label = round(max_density_x, 2)), 
+                color = "blue", size = 3, vjust = 1.5)
+  })
+  
+  output$densityPlot2 = renderPlot({
+    # Filter data based on the selected cluster
+    data = house
+    if (input$clusterSelection2 != "All Clusters") {
+      data = data[data$cluster == as.numeric(input$clusterSelection2), ]
+    }
+    
+    # Calculate the density
+    density_data = density(data$price, adjust = 4)
+    max_density_x = density_data$x[which.max(density_data$y)]
+    max_density_y = max(density_data$y)
+    # Create a data frame for the vertical line
+    line_data = data.frame(x = c(max_density_x, max_density_x), 
+                           y = c(0, max_density_y))
+    
+    # Generate the density plot
+    ggplot(data, aes(x = price)) +
+      # Normalise the histogram
+      geom_histogram(aes(y = after_stat(density)),
+                     # Adjust binwidth to the scale of the data
+                     binwidth = 50000,
+                     color = "black", fill = "lightblue", alpha = 0.7) +
+      geom_density(aes(y = ..density..),  
+                   # Adjust the color of the density curve
+                   color = "red", 
+                   # Adjust the size of the density curve
+                   linewidth = 1,
+                   # Adjust the smoothing parameter for density
+                   adjust = 4) + 
+      labs(title = paste("Density Plot for Cluster", input$clusterSelection),
+           x = "Price",
+           y = "Density") +
+      xlim(0, 8000000) +
+      # Add vertical line at max density
+      geom_segment(aes(x = x, y = 0, xend = x, yend = y), 
+                   data = line_data,
+                   color = "blue", size = 1, linetype = "dashed") +
+      # Add label max density
+      geom_text(aes(x = max_density_x, y = 0, label = round(max_density_x, 2)), 
+                color = "blue", size = 3, vjust = 1.5)
   })
   
 }
