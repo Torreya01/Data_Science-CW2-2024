@@ -2,7 +2,7 @@
 library(ggplot2)
 
 # Load your data (assuming your data frame is named 'data_frame')
-data = read.csv("data/derived/location_clustered.csv")
+data = read.csv("data/derived/location_reduced.csv")
 
 # Create the boxplot using ggplot
 box = ggplot(data, aes(x = factor(cluster), y = price)) + 
@@ -24,3 +24,4 @@ ggsave(filename = "Box.png",
        width = 8,   # Width of the plot in inches
        height = 6,  # Height of the plot in inches
        dpi = 300)
+
