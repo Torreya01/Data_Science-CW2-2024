@@ -4,7 +4,7 @@ library(dplyr)
 # Load the cleaned data
 data = read.csv("data/derived/location_clustered.csv")
 
-# Subset the data into different ranges
+# Subset the data into different clusters
 subset1 = data %>% filter(cluster == 1)
 subset2 = data %>% filter(cluster == 2)
 subset3 = data %>% filter(cluster == 3)
