@@ -2,7 +2,7 @@
 library(ggplot2)
 
 # Load the data
-clustered = read.csv("data/derived/location_clustered.csv")
+clustered = read.csv("data/derived/location_reduced.csv")
 
 # Convert 'cluster' to a factor if it's not already
 clustered$cluster = as.factor(clustered$cluster)
@@ -29,7 +29,8 @@ cluster = ggplot(clustered, aes(x = long, y = lat, color = cluster)) +
 ggsave(filename = "Cluster.png",
        plot = cluster,
        device = 'png', 
-       path = "Plots/Figures",
+       path = "www/figures",
        width = 8,   # Width of the plot in inches
        height = 6,  # Height of the plot in inches
        dpi = 300)
+
