@@ -1,11 +1,13 @@
 # Load library
 library(ggplot2)
 
-# Create the boxplot using ggplot
+# Define box plot function
 boxplot = function(data, input = ""){
   ggplot(data, aes(x = factor(cluster), y = price)) + 
+    
   # Add box plot
   geom_boxplot() +
+    
   # Add plot title
   labs(title = paste("Box-plot For Each Clusters In Year", input),
        x = "Clusters",
