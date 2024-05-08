@@ -26,7 +26,7 @@ densityplot = function(data, input = ""){
                  # Adjust the smoothing parameter for density
                  adjust = 4) + 
     labs(title = if (input == ""){
-      paste("Density Plot")}
+      paste("Density Plot for Selected Data")}
       else 
         {
         paste("Density Plot for Cluster", input)
