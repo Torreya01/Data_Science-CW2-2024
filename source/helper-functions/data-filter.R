@@ -1,6 +1,7 @@
 # Load library
 library(dplyr)
 
+# Define filterdata function
 filterData = function(house, priceRange, selectedClusters, yearSelect, colour_map) {
   if (yearSelect == "All") {
     # Filter data without considering the year
