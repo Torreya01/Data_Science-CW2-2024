@@ -99,9 +99,11 @@ You can access to the application via the website here.
 
 3.  Edit the R files in source/helper-functions to add anything you want on the plots for each plot.
 
-4.  Edit the md files in text/ to update anything you want to mention for each tab.
+4.  Change the images in www/ to update any images.
 
-5.  Run the app.R to obtain the dashboard.
+5.  Edit the md files in text/ to update anything you want to mention for each tab.
+
+6.  Run the app.R to obtain the dashboard.
 
 ## Getting help
 
