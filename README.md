@@ -16,7 +16,7 @@ This directory contains all the raw and derived data.
 
 ### source/
 
--   data-processing/
+-   data-deriving/
 
     -   The data-cleaning.R cleans and derives the data.
 
@@ -27,6 +27,8 @@ This directory contains all the raw and derived data.
     -   The box-plot.R creates box plots used in app.
 
     -   The colour-patterns.R contains the cluster colours used in map.
+
+    -   The data-filter.R creates the filtered data used in each plot.
 
     -   The density-plot.R creates density plots used in app.
 
@@ -47,6 +49,18 @@ This directory contains all the images downloaded from internet. To ensure the v
 -   The water-view-2.png is the view of Lake Washington can be found [here](https://www.google.co.uk/maps/place/Lake+Washington/@47.6215474,-122.255756,3a,75y,90t/data=!3m8!1e2!3m6!1sAF1QipOBU9Umz-0jlGkh2PpNPL2Ob1hewCQe4TEpUKek!2e10!3e12!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipOBU9Umz-0jlGkh2PpNPL2Ob1hewCQe4TEpUKek%3Dw203-h135-k-no!7i1620!8i1080!4m9!3m8!1s0x549014cd737a0137:0x9069059ce509d017!8m2!3d47.6215474!4d-122.255756!10e5!14m1!1BCgIgAQ!16zL20vMDFnM3Zu?entry=ttu) from Google map.
 
 -   The water-view-3.png is the view of Lake Washington can be found [here](https://www.google.co.uk/maps/place/Lake+Washington/@47.7568101,-122.2634396,3a,75y,83.92h,89.23t/data=!3m8!1e1!3m6!1sAF1QipMUbQ9377T5huboaJ0smJjbswv-Z8rPpGVGVVwN!2e10!3e11!6shttps:%2F%2Flh5.googleusercontent.com%2Fp%2FAF1QipMUbQ9377T5huboaJ0smJjbswv-Z8rPpGVGVVwN%3Dw203-h100-k-no-pi-0-ya98.93163-ro-0-fo100!7i7168!8i3584!4m19!1m9!3m8!1s0x54905c8c832d7837:0xe280ab6b8b64e03e!2sKing+County,+WA,+USA!3b1!8m2!3d47.5480339!4d-121.9836029!10e5!16zL20vMG1tcHo!3m8!1s0x549014cd737a0137:0x9069059ce509d017!8m2!3d47.6215474!4d-122.255756!10e5!14m1!1BCgIgARICCAI!16zL20vMDFnM3Zu?entry=ttu) from Google map.
+
+### text/
+
+This directory contains all the texts inserted in the application
+
+-   box-text.md contains all the texts inserted in the box tab.
+
+-   density-text.md contains all the texts inserted in the density tab.
+
+-   environment-text.md contains all the texts inserted in the environment tab.
+
+-   map-text.md contains all the texts inserted in the map tab.
 
 ### app/
 
@@ -77,13 +91,17 @@ You can access to the application via the website here.
 
 1.  Obtain data. (you may find it [here](https://www.kaggle.com/harlfoxem/housesalesprediction) again)
 
-2.  Run files in source/data-processing in following order to obtain the derived data.
+2.  Run files in source/data-deriving in following order to obtain the derived data.
 
     -   data-cleaning.R
 
     -   data-clustering.R
 
-3.  Run the application using the instruction above.
+3.  Edit the R files in source/helper-functions to add anything you want on the plots for each plot.
+
+4.  Edit the md files in text/ to update anything you want to mention for each tab.
+
+5.  Run the app.R to obtain the dashboard.
 
 ## Getting help
 
