@@ -16,7 +16,7 @@ source("source/helper-functions/data-filter.R")
 ui = navbarPage("House Prices in King County",
                 theme = bs_theme(version = 5, bootswatch = "minty"),
                 
-                # Code for the map tab
+##################################### Code for things in map tab #######################################  
                 tabPanel("Map",
                          
                          # Add adjustments to adjust inputs
@@ -50,7 +50,7 @@ ui = navbarPage("House Prices in King County",
                               
                               uiOutput("MapPart2"),))),
                 
-                # Code for the density tab
+##################################### Code for things in density tab #######################################  
                 tabPanel("Density plot",
                          
                          # Add elements to the main panel
@@ -72,7 +72,7 @@ ui = navbarPage("House Prices in King County",
                          
                          uiOutput("DensityPart2")),
                   
-                # Code for the box tab        
+##################################### Code for things in box tab #######################################         
                 tabPanel("Box plot",
                          
                          # Add elements to the main panel
@@ -88,7 +88,7 @@ ui = navbarPage("House Prices in King County",
                          
                          uiOutput("Box")),
                  
-                # Code for the box tab
+##################################### Code for things in environment tab #######################################  
                  tabPanel("Living Environment",
                           
                           uiOutput("EnvironmentPart1"),
