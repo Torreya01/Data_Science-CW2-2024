@@ -4,6 +4,26 @@
 
 The project is designed to use RShiny to develop an interactive platform that visualizes the correlation between geographical locations and residential property prices in King County, USA. The primary aim is to enable users to explore how the location factor influence real estate values within the region. The centerpiece of the platform is a detailed map that not only displays housing prices across various areas but also allows users to engage with the data to uncover trends and insights.
 
+## How to run the dashboard
+
+### If you have R installed
+
+Open your R console or RStudio and paste the commands provided below.
+
+``` r
+library(shiny) runGitHub("Data_Science-CW2-2024", "Torreya01", launch.browser = TRUE)
+```
+
+In case R package shiny is not installed please run the following command.
+
+``` r
+install.packages("shiny", repos = "http://cran.us.r-project.org")
+```
+
+### If you do not have R installed
+
+You can access to the application via the website here.
+
 ## Explaining Directories
 
 ### data/
@@ -66,27 +86,6 @@ This directory contains all the texts inserted in the application
 
 This is the application script with comment.
 
-## How to run the application
-
-### If you have R installed
-
-Open your R console or RStudio and paste the commands provided below.
-
-``` r
-library(shiny)
-runGitHub("Data_Science-CW2-2024", "Torreya01", launch.browser = TRUE)
-```
-
-In case R package shiny is not installed please run the following command.
-
-``` r
-install.packages("shiny", repos = "http://cran.us.r-project.org")
-```
-
-### If you do not have R installed
-
-You can access to the application via the website here.
-
 ## Instructions for reproducing
 
 1.  Obtain data. (you may find it [here](https://www.kaggle.com/harlfoxem/housesalesprediction) again)
@@ -104,6 +103,10 @@ You can access to the application via the website here.
 5.  Edit the md files in text/ to update anything you want to mention for each tab.
 
 6.  Run the app.R to obtain the dashboard.
+
+## License
+
+This project is licensed under the MIT license.
 
 ## Getting help
 
