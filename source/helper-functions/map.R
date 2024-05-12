@@ -1,7 +1,7 @@
 # Load library
 library(leaflet)
 
-# # Define map function
+# Define map function
 mapproduce = function(data) {
   # Define the bounds for King County to restrict the map view
   bounds = list(

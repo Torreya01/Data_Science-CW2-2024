@@ -1,5 +1,7 @@
+# Load library
 library(ggplot2)
 
+# Define density plot function
 densityplot = function(data, input = ""){
   # Ensure price is a numeric vector and not a list
   if (is.list(data$price)) {
