@@ -1,4 +1,4 @@
-Environment around the houses can be a great impact of the prices. Houses located in a nice neighbourhood will have higher prices. Below are the environmental analysis of the most three most expensive houses located in cluster 3, 7 and 9.
+Environment around the houses can be a great impact of the prices. Houses located in a nice neighbourhood will have higher prices. Below are the environmental analysis of the most three most expensive houses located in cluster 4, 5 and 6.
 
 <!-- split here -->
 
