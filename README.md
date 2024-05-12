@@ -4,6 +4,16 @@
 
 The project is designed to use RShiny to develop an interactive platform that visualizes the correlation between geographical locations and residential property prices in King County, USA. The primary aim is to enable users to explore how the location factor influence real estate values within the region. The centerpiece of the platform is a detailed map that not only displays housing prices across various areas but also allows users to engage with the data to uncover trends and insights.
 
+The dashboard contains four parts:
+
+1.  **Interactive Map**: The first tab provides a detailed map where users can select different price ranges to display houses, highlighting various clusters and presenting density plots based on the selected data.
+
+2.  **Density Plot Comparison**: The second tab allows users to compare density plots by adjusting clusters and years, enabling a dynamic exploration of density changes over time.
+
+3.  **Box Plot Comparison**: The third tab offers a comparative view of box plots for different years, illustrating variations in housing prices across clusters from one year to the next.
+
+4.  **Visual Gallery**: The fourth tab showcases a collection of images highlighting houses and their environments in the most expensive segments of the market.
+
 ## How to run the dashboard
 
 ### If you have R installed
