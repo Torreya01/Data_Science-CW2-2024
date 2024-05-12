@@ -99,15 +99,15 @@ ui = navbarPage("House Prices in King County",
                             column(4,
                               div(style = "text-align: center;",  # Center the image and caption
                                        img(src = "Street-View-1.png", height = "100%", width = "100%"),
-                                       p("Street view of the most expensive house in cluster 9"))),
+                                       p("Street view of the most expensive house in cluster 4"))),
                             column(4,
                                    div(style = "text-align: center;",  # Center the image and caption
                                        img(src = "Street-View-2.png", height = "100%", width = "100%"),
-                                       p("Street view of the most expensive house in cluster 7"))),
+                                       p("Street view of the most expensive house in cluster 5"))),
                             column(4,
                                    div(style = "text-align: center;",  # Center the image and caption
                                        img(src = "Street-View-3.png", height = "100%", width = "100%"),
-                                       p("Street view of the most expensive house in cluster 3")))
+                                       p("Street view of the most expensive house in cluster 6")))
                           ),
                           
                           uiOutput("EnvironmentPart2"),
