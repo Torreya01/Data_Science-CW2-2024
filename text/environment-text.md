@@ -8,4 +8,4 @@ There is an abundance of greenery visible in all three properties, they all have
 
 <!-- split here -->
 
-These three houses are all located nearby lakes, one is near to Lake Union and two are near to Lake Washington. Waterfront properties are limited in number and offer unique, often unobstructed, views of the water. The exclusivity of these views and direct access to water significantly contribute to their high prices.
+These three clusters are all located nearby lakes, one is near to Lake Union and two are near to Lake Washington. Waterfront properties are limited in number and offer unique, often unobstructed, views of the water. The exclusivity of these views and direct access to water significantly contribute to their high prices.
