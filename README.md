@@ -32,7 +32,7 @@ install.packages("shiny", repos = "http://cran.us.r-project.org")
 
 ### If you do not have R installed
 
-You can access to the application via the website here.
+You can access to the application via the website [here](http://torreya01.shinyapps.io/House-Prices-in-King-County).
 
 ## Explaining Directories
 
@@ -98,6 +98,8 @@ This is the application script with comment.
 
 ## Instructions for reproducing
 
+### Build application
+
 1.  Obtain data. (you may find it [here](https://www.kaggle.com/harlfoxem/housesalesprediction) again)
 
 2.  Run files in source/data-deriving in following order to obtain the derived data.
@@ -113,6 +115,10 @@ This is the application script with comment.
 5.  Edit the md files in text/ to update anything you want to mention for each tab.
 
 6.  Run the app.R to obtain the dashboard.
+
+### Deploy application
+
+Create an account in [shinyapps.io](https://www.shinyapps.io/) and follow the instructions on the website.
 
 ## License
 
